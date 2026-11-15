@@ -9,7 +9,7 @@ class Player:
     ID = [0, 1]
     AllianceID = [0, 0]
     Token = ""
-    Name = "Brawler"
+    Name = "СільодкінаВкусняшка"
     Registered = False
     Thumbnail = 0
     Namecolor = 0
