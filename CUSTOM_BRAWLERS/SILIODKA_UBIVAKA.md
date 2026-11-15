@@ -1,13 +1,16 @@
-# СільодкаУбівака — custom brawler concept
+# SilodKaYbivaka — custom brawler
 
 Status: design prototype only. This file does not register a playable brawler in the V46 client or server.
 
 ## Identity
-- Display name: СільодкаУбівака
-- Internal name: HerringKiller
+- Display name: SilodKaYbivaka
+- Internal name: ShotgunGirl (temporary compatibility base)
 - Temporary visual base: Shelly (ShotgunGirl / BanditGirlDefault)
 - Role: damage dealer
 - Rarity: Legendary
+
+## Description
+A fearless silver herring with a tactical vest and an automatic blaster. She sprays enemies with a rapid burst and turns an ordinary fish can into an explosive surprise. Never underestimate the fish!
 
 ## Base stats (prototype targets)
 - Health: 5,000
@@ -15,9 +18,9 @@ Status: design prototype only. This file does not register a playable brawler in
 - Main attack: automatic blaster
 - Target damage: 300 per projectile
 - Firing pattern: rapid 5-shot burst
-- Super: explosive fish-can projectile (to be implemented after client compatibility is confirmed)
+- Super: explosive fish-can projectile (not implemented yet)
 
 ## Implementation notes
-A new playable character requires a matching character/card ID and client-side resources/definitions. Reusing Shelly's model alone is not enough: the V46 APK must recognize the new ID, weapon, animations, and localization. Do not overwrite Shelly's existing row or modify player database files as a shortcut.
+The current server-side prototype reuses Shelly's existing character row, so the game may still show Shelly's original name, description, model, and icon. The display name and description above are the intended custom text; they will appear in-game only after the matching localization and client resources are added to the V46 APK.
 
-Next implementation step: identify a safe unused character/card ID and verify how this server maps CSV rows to client IDs. Then add the server-side row and player unlock in a backward-compatible way, followed by matching client assets/definitions.
+A fully separate playable character requires a new compatible character/card ID and client-side resources/definitions. Do not claim this is complete until the APK recognizes the new ID, weapon, animations, icon, and localization.
