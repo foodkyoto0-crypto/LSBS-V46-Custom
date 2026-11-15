@@ -6,6 +6,7 @@ import shutil
 import tempfile
 import urllib.request
 import zipfile
+import sys
 
 REPO_ZIP = "https://codeload.github.com/foodkyoto0-crypto/LSBS-V46-Custom/zip/refs/heads/main"
 
@@ -24,10 +25,12 @@ def should_skip(rel_path):
     return False
 
 def main():
-    print("===================================")
-    print("       LSBS V46 GITHUB UPDATE")
-    print("===================================")
-    print("Downloading latest files from GitHub...")
+    automatic = "--auto" in sys.argv
+    if not automatic:
+        print("===================================")
+        print("       LSBS V46 GITHUB UPDATE")
+        print("===================================")
+    print("Checking GitHub for updates...")
 
     request = urllib.request.Request(
         REPO_ZIP,
@@ -76,13 +79,17 @@ def main():
         print("UPDATE COMPLETE!")
         print("Updated files:", copied)
         print("Preserved: Configuration.py, Database and HexDump files.")
-        print("Now open Core.py in Pydroid 3 and press Run.")
+        if not automatic:
+            print("Now open Core.py in Pydroid 3 and press Run.")
 
 if __name__ == "__main__":
+    automatic = "--auto" in sys.argv
     try:
         main()
     except Exception as error:
-        print("")
-        print("UPDATE FAILED:", error)
+        print("\\nUPDATE FAILED:", error)
         print("Check your internet connection and try again.")
-    input("\nPress Enter to close...")
+        if automatic:
+            raise SystemExit(1)
+    if not automatic:
+        input("\\nPress Enter to close...")
