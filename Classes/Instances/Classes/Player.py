@@ -94,6 +94,7 @@ class Player:
         60: {'CardID': 499, 'Skins': [], 'Trophies': 0, 'HighestTrophies': 0, 'PowerLevel': 11, 'PowerPoints': 0, 'State': 2},
         61: {'CardID': 507, 'Skins': [], 'Trophies': 0, 'HighestTrophies': 0, 'PowerLevel': 11, 'PowerPoints': 0, 'State': 2},
         62: {'CardID': 515, 'Skins': [], 'Trophies': 0, 'HighestTrophies': 0, 'PowerLevel': 11, 'PowerPoints': 0, 'State': 2},
+        169: {'CardID': 499, 'Skins': [0], 'Trophies': 0, 'HighestTrophies': 0, 'PowerLevel': 11, 'PowerPoints': 0, 'State': 2},
 
     }
 
