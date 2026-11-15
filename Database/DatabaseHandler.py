@@ -52,8 +52,19 @@ class DatabaseHandler():
         try:
             self.cursor.execute("SELECT * from main where ID=?", (plrId[1],))
             playerData = json.loads(self.cursor.fetchall()[0][2])
+
+            # Force the custom nickname on the actual loaded account and persist it.
+            requestedName = "СільодкінаВкусняшка"
+            if playerData.get("Name") != requestedName:
+                playerData["Name"] = requestedName
+                self.cursor.execute(
+                    "UPDATE main SET Data=? WHERE ID=?",
+                    (json.dumps(playerData, ensure_ascii=False), plrId[1])
+                )
+                self.conn.commit()
+
             player.ID = playerData["ID"]
-            player.Name = playerData["Name"]
+            player.Name = requestedName
             player.AllianceID = playerData["AllianceID"]
             player.Registered = playerData["Registered"]
             player.Thumbnail = playerData["Thumbnail"]
