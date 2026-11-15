@@ -1,26 +1,31 @@
 # SilodKaYbivaka — custom brawler
 
-Status: design prototype only. This file does not register a playable brawler in the V46 client or server.
+Status: server-side prototype entry added. A matching V46 client/APK update is still required before this can be confirmed playable.
 
 ## Identity
 - Display name: SilodKaYbivaka
-- Internal name: ShotgunGirl (temporary compatibility base)
-- Temporary visual base: Shelly (ShotgunGirl / BanditGirlDefault)
+- Internal character name: SilodKaYbivaka
+- Server-side character ID: 169 (based on current CSV row order)
+- Temporary visual base: Shelly (BanditGirlDefault)
 - Role: damage dealer
 - Rarity: Legendary
 
 ## Description
-A fearless silver herring with a tactical vest and an automatic blaster. She sprays enemies with a rapid burst and turns an ordinary fish can into an explosive surprise. Never underestimate the fish!
+A fearless silver herring in a tactical vest with an automatic blaster. She sprays enemies with rapid fire and turns an ordinary fish can into an explosive surprise. Never underestimate the fish!
 
-## Base stats (prototype targets)
+## Prototype stats
 - Health: 5,000
 - Movement speed: 720
-- Main attack: automatic blaster
-- Target damage: 300 per projectile
-- Firing pattern: rapid 5-shot burst
-- Super: explosive fish-can projectile (not implemented yet)
+- Main attack: Colt's automatic blaster skill (GunslingerWeapon)
+- Super: Colt's super skill (GunslingerUlti) as a temporary placeholder
+- Target damage: not yet customized; currently inherited from the placeholder skill
+- Super fish-can projectile: not implemented yet
 
-## Implementation notes
-The current server-side prototype reuses Shelly's existing character row, so the game may still show Shelly's original name, description, model, and icon. The display name and description above are the intended custom text; they will appear in-game only after the matching localization and client resources are added to the V46 APK.
+## Server changes
+- Added a separate character row to Classes/Files/assets/csv_logic/characters.csv.
+- Mirrored the row in ContentUpdater/Content/assets/csv_logic/characters.csv.
+- Added unlock, health, attack, and super card rows to Classes/Files/assets/csv_logic/cards.csv.
+- Restored Shelly's original health and skill references; Shelly remains a separate, unchanged character.
 
-A fully separate playable character requires a new compatible character/card ID and client-side resources/definitions. Do not claim this is complete until the APK recognizes the new ID, weapon, animations, icon, and localization.
+## Client/APK requirements
+This repository change alone does not add the custom fish model, texture, icon, animations, localized name/description, or custom attack/super assets to the V46 APK. The new ID and TID must also be recognized by the client. Until a matching APK is built and tested, do not assume the character will appear or be selectable in-game.
