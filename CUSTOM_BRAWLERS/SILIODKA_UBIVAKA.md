@@ -24,7 +24,7 @@ A fearless silver herring in a tactical vest with an automatic blaster. She spra
 ## Server changes
 - Added a separate character row to Classes/Files/assets/csv_logic/characters.csv.
 - Mirrored the row in ContentUpdater/Content/assets/csv_logic/characters.csv.
-- Added unlock, health, attack, and super card rows to Classes/Files/assets/csv_logic/cards.csv.
+- Added unlock, health, attack, and super card rows to Classes/Files/assets/csv_logic/cards.csv. The active unlock card ID is 503; reserved disabled rows keep it separate from legacy IDs.
 - Restored Shelly's original health and skill references; Shelly remains a separate, unchanged character.
 
 ## Client/APK requirements
