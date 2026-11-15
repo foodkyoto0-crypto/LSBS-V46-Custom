@@ -15,6 +15,11 @@ if os.path.isfile(updater):
     if result.returncode != 0:
         print("Auto-update failed; starting with the files already installed.")
 
+# Apply the requested nickname to the saved local profile, preserving all other data.
+nickname_updater = os.path.join(BASE_DIR, "nickname_fix.py")
+if os.path.isfile(nickname_updater):
+    subprocess.run([sys.executable, nickname_updater], cwd=BASE_DIR, check=False)
+
 import Configuration
 from Classes.ServerConnection import ServerConnection
 from Static.StaticData import StaticData
