@@ -19,9 +19,9 @@ class Player:
     Coins = 100000
     Gems = 100000
     StarPoints = 100000
-    Trophies = 100000
-    HighestTrophies = 100000
-    TrophyRoadTier = 250
+    Trophies = 999999
+    HighestTrophies = 999999
+    TrophyRoadTier = 999999
     Experience = 100000
     Level = 500
     Tokens = 100000
