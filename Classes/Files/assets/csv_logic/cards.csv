@@ -1,6 +1,5 @@
 Name,IconSWF,IconExportName,Target,Disabled,LockedForChronos,DynamicRarityStartSeason,MetaType,RequiresCard,Type,Skill,Value,Value2,Value3,Rarity,TID,PowerNumberTID,PowerNumber2TID,PowerNumber3TID,PowerNumber4TID,PowerIcon1ExportName,PowerIcon2ExportName,SortOrder,DontUpgradeStat,HideDamageStat
 String,String,String,String,boolean,boolean,int,int,String,String,String,int,int,int,String,String,String,String,String,String,String,String,int,boolean,boolean
-ShotgunGirl_unlock,sc/ui.sc,,ShotgunGirl,,,,0,,unlock,,,,,common,,,,,,,,101,,
 ShotgunGirl_hp,sc/ui.sc,health_icon,ShotgunGirl,,,,1,,hp,,,,,common,TID_ARMOR,TID_ARMOR_STAT,,,,genicon_health,,,,
 ShotgunGirl_abi,sc/ui.sc,attack_icon,ShotgunGirl,,,,2,,skill,ShotgunGirlWeapon,,,,common,TID_LONG_RANGE_SHOTGUN,TID_STAT_DAMAGE_PER_SHELL,,,,genicon_damage,,,,
 ShotgunGirl_ulti,sc/ui.sc,ulti_icon,ShotgunGirl,,,,3,,skill,ShotgunGirlUlti,,,,common,TID_MEGA_BLASH_ULTI,TID_STAT_DAMAGE_PER_SHELL,,,,genicon_damage,,,,
@@ -499,11 +498,7 @@ Silencer_unique,sc/ui.sc,,Silencer,,,,4,,ulti_silence_duration,,80,,,common,TID_
 Silencer_unique_2,sc/ui.sc,,Silencer,,true,,4,,more_bullets_attack,,500,,,common,TID_SPEC_ABI_SILENCER_2,,,,,genicon_damage,,,,
 Silencer_Mine,sc/ui.sc,icon_item_otis_1,Silencer,,,,5,,accessory,Silencer_Mine,,,,common,TID_ACCESSORY_SILENCER_GADGET_1,,,,,genicon_health,,,,
 Silencer_BigProjectiles,sc/ui.sc,icon_item_otis_2,Silencer,,true,,5,,accessory,Silencer_BigProjectiles,4,42,,common,TID_ACCESSORY_SILENCER_GADGET_2,,,,,genicon_health,,,,
-SilodKaYbivaka_reserved_1,sc/ui.sc,,SilodKaYbivaka,true,,,0,,unlock,,,,,common,,,,,,,,,,
-SilodKaYbivaka_reserved_2,sc/ui.sc,,SilodKaYbivaka,true,,,0,,unlock,,,,,common,,,,,,,,,,
-SilodKaYbivaka_reserved_3,sc/ui.sc,,SilodKaYbivaka,true,,,0,,unlock,,,,,common,,,,,,,,,,
-SilodKaYbivaka_reserved_4,sc/ui.sc,,SilodKaYbivaka,true,,,0,,unlock,,,,,common,,,,,,,,,,
-SilodKaYbivaka_unlock,sc/ui.sc,,SilodKaYbivaka,,,,0,,unlock,,,,,legendary,TID_SILODKAYBIVAKA,,,,,,,601,,
-SilodKaYbivaka_hp,sc/ui.sc,health_icon,SilodKaYbivaka,,,,1,,hp,,,,,common,TID_ARMOR,TID_ARMOR_STAT,,,,genicon_health,,,,
-SilodKaYbivaka_abi,sc/ui.sc,attack_icon,SilodKaYbivaka,,,,2,,skill,GunslingerWeapon,,,,common,TID_RAPID_FIRE,TID_STAT_DAMAGE_PER_SHOT,,,,genicon_damage,,,,
-SilodKaYbivaka_ulti,sc/ui.sc,ulti_icon,SilodKaYbivaka,,,,3,,skill,GunslingerUlti,,,,common,TID_RAPID_FIRE_ULTI,TID_STAT_DAMAGE_PER_SHOT,,,,genicon_damage,,,,
+SilotkinNyamka_unlock,sc/ui.sc,,SilotkinNyamka,,,,0,,unlock,,,,,common,,,,,,,,101,,,,
+SilotkinNyamka_hp,sc/ui.sc,health_icon,SilotkinNyamka,,,,1,,hp,,,,,common,TID_ARMOR,TID_ARMOR_STAT,,,,genicon_health,,,,,,
+SilotkinNyamka_abi,sc/ui.sc,attack_icon,SilotkinNyamka,,,,2,,skill,SilotkinNyamkaWeapon,,,,common,TID_LONG_RANGE_SHOTGUN,TID_STAT_DAMAGE_PER_SHELL,,,,genicon_damage,,,,,,
+SilotkinNyamka_ulti,sc/ui.sc,ulti_icon,SilotkinNyamka,,,,3,,skill,SilotkinNyamkaUlti,,,,common,TID_MEGA_BLASH_ULTI,TID_STAT_DAMAGE_PER_SHELL,,,,genicon_damage,,,,,,
