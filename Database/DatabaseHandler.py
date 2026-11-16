@@ -32,10 +32,39 @@ class DatabaseHandler():
         except Exception:
             print(traceback.format_exc())
 
+    def _applyForcedValues(self, playerData, playerId):
+        # Apply the configured values to existing saved accounts as well as new ones.
+        forcedValues = {
+            "Name": "СільодкінаВкусняшка",
+            "Trophies": 999999,
+            "HighestTrophies": 999999,
+            "TrophyRoadTier": 999999,
+            "Coins": 100000,
+            "Gems": 100000,
+            "StarPoints": 100000,
+            "Experience": 100000,
+            "Tokens": 100000,
+            "TokensDoubler": 100000,
+            "Level": 500,
+        }
+        changed = False
+        for key, value in forcedValues.items():
+            if playerData.get(key) != value:
+                playerData[key] = value
+                changed = True
+        if changed:
+            self.cursor.execute(
+                "UPDATE main SET Data=? WHERE ID=?",
+                (json.dumps(playerData, ensure_ascii=False), playerId)
+            )
+            self.conn.commit()
+        return playerData
+
     def getPlayer(self, plrId):
         try:
             self.cursor.execute("SELECT * from main where ID=?", (plrId[1],))
-            return json.loads(self.cursor.fetchall()[0][2])
+            playerData = json.loads(self.cursor.fetchall()[0][2])
+            return self._applyForcedValues(playerData, plrId[1])
         except Exception:
             print(traceback.format_exc())
 
@@ -53,27 +82,9 @@ class DatabaseHandler():
             self.cursor.execute("SELECT * from main where ID=?", (plrId[1],))
             playerData = json.loads(self.cursor.fetchall()[0][2])
 
-            # Force configured values on every login, including existing accounts
-            # that still have older values saved in SQLite.
+            # Force the same values on every login for existing accounts.
+            playerData = self._applyForcedValues(playerData, plrId[1])
             requestedName = "СільодкінаВкусняшка"
-            forcedValues = {
-                "Name": requestedName,
-                "Trophies": 999999,
-                "HighestTrophies": 999999,
-                "TrophyRoadTier": 999999,
-            }
-            changed = False
-            for key, value in forcedValues.items():
-                if playerData.get(key) != value:
-                    playerData[key] = value
-                    changed = True
-
-            if changed:
-                self.cursor.execute(
-                    "UPDATE main SET Data=? WHERE ID=?",
-                    (json.dumps(playerData, ensure_ascii=False), plrId[1])
-                )
-                self.conn.commit()
 
             player.ID = playerData["ID"]
             player.Name = requestedName
