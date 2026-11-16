@@ -9,7 +9,7 @@ class LobbyInfoMessage(PiranhaMessage):
 
     def encode(self, fields, player):
         self.writeVInt(ClientsManager.GetCount())
-        self.writeString(f"SILODKA UBIVAKA SERVER\nVersion: 46.168")
+        self.writeString(f"HAIDA SERVER\nVersion: 46.168")
         self.writeVInt(0)
 
     def decode(self):
